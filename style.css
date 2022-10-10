@@ -12,6 +12,7 @@ body {
 
 .flex {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -22,6 +23,7 @@ button {
 }
 
 .happy-button {
+  position: relative;
   font-size: 1.1rem;
   color: white;
   padding: 1.2rem;
@@ -36,4 +38,25 @@ button {
 .happy-button:active {
   transform: scale(0.99);
   background-color: #ad7f9e;
+}
+
+.be-happy {
+  position: absolute;
+  display: none;
+}
+
+.be-happy.active {
+  display: block;
+  animation: show 0.5s linear forwards;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(60px);
+  }
 }
